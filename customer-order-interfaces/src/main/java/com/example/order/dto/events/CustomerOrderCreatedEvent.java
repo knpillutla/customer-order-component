@@ -18,7 +18,7 @@ import lombok.Value;
 @Data
 public class CustomerOrderCreatedEvent extends BaseEvent {
 	private CustomerOrderDTO orderDTO;
-	private static String EVENT_NAME = "OrderCreatedEvent";
+	private static String EVENT_NAME = "CustomerOrderCreatedEvent";
 	public CustomerOrderCreatedEvent(CustomerOrderDTO orderDTO) {
 		this(orderDTO, null);
 	}

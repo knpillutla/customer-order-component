@@ -16,7 +16,7 @@ public class CustomerOrderListener {
 	@Autowired
 	CustomerOrderService orderService;
 
-	@StreamListener(target=CustomerOrderStreams.CUSTOMER_ORDERS_INPUT, condition = "headers['eventName']=='OrderDownloadEvent'")
+	@StreamListener(target=CustomerOrderStreams.CUSTOMER_ORDERS_INPUT, condition = "headers['eventName']=='CustomerOrderDownloadEvent'")
 	public void handleNewOrder(CustomerOrderDownloadEvent orderDownloadEvent) { // OrderCreationRequestDTO
 																					// orderCreationRequestDTO) {
 		log.info("Received OrderCreationRequest Msg: {}" + ": at :" + new java.util.Date(), orderDownloadEvent);

@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class CustomerOrderDownloadEvent extends BaseEvent {
 	private CustomerOrderCreationRequestDTO orderCreationRequestDTO;
-	private static String EVENT_NAME = "OrderDownloadEvent";
+	private static String EVENT_NAME = "CustomerOrderDownloadEvent";
 	public CustomerOrderDownloadEvent(CustomerOrderCreationRequestDTO orderReqDTO) {
 		this(orderReqDTO, null);
 	}

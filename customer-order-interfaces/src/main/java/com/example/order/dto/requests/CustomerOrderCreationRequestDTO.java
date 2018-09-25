@@ -40,7 +40,7 @@ public class CustomerOrderCreationRequestDTO extends BaseDTO{
 	List<CustomerOrderLineCreationRequestDTO> orderLines;
 	
 	public void createHeaders() {
-		this.addHeader("eventName", "NewOrderEvent");
+		this.addHeader("eventName", "NewCustomerOrderEvent");
 	}
 }
 

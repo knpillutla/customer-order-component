@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class CustomerOrderLineAllocationFailedEvent extends ExceptionEvent{
 	public CustomerOrderLineStatusUpdateRequestDTO orderLineStatusUpdateRequestDTO;
-	private static String EVENT_NAME = "OrderUpdateFailedEvent";
+	private static String EVENT_NAME = "CustomerOrderLineAllocationFailedEvent";
 	public CustomerOrderLineAllocationFailedEvent(CustomerOrderLineStatusUpdateRequestDTO req, String errorMsg) {
 		super(EVENT_NAME, errorMsg);
 		this.orderLineStatusUpdateRequestDTO = req;

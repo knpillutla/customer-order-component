@@ -16,7 +16,7 @@ import lombok.Value;
 @Data
 public class CustomerOrderUpdateFailedEvent extends ExceptionEvent{
 	public CustomerOrderUpdateRequestDTO orderUpdateReq;
-	private static String EVENT_NAME = "OrderUpdateFailedEvent";
+	private static String EVENT_NAME = "CustomerOrderUpdateFailedEvent";
 	public CustomerOrderUpdateFailedEvent(CustomerOrderUpdateRequestDTO req, String errorMsg) {
 		super(EVENT_NAME, errorMsg);
 		this.orderUpdateReq = req;
