@@ -17,9 +17,9 @@ import lombok.extern.slf4j.Slf4j;
 @EnableAutoConfiguration
 @EnableScheduling
 @Slf4j
-public class OrderApplication {
+public class CustomerOrderApplication {
 	private Random random = new Random();
 	public static void main(String[] args) {
-		SpringApplication.run(OrderApplication.class, args);
+		SpringApplication.run(CustomerOrderApplication.class, args);
 	}
 }

@@ -17,19 +17,19 @@ public class CustomerOrderListener {
 	CustomerOrderService orderService;
 
 	@StreamListener(target=CustomerOrderStreams.CUSTOMER_ORDERS_INPUT, condition = "headers['eventName']=='CustomerOrderDownloadEvent'")
-	public void handleNewOrder(CustomerOrderDownloadEvent orderDownloadEvent) { // OrderCreationRequestDTO
+	public void handleNewCustomerOrder(CustomerOrderDownloadEvent orderDownloadEvent) { // OrderCreationRequestDTO
 																					// orderCreationRequestDTO) {
-		log.info("Received OrderCreationRequest Msg: {}" + ": at :" + new java.util.Date(), orderDownloadEvent);
+		log.info("Received CustomerOrderDownloadEvent Msg: {}" + ": at :" + new java.util.Date(), orderDownloadEvent);
 		long startTime = System.currentTimeMillis();
 		try {
-			orderService.createOrder(orderDownloadEvent.getOrderCreationRequestDTO());
+			orderService.createOrder(orderDownloadEvent.getCustomerOrderCreationRequestDTO());
 			long endTime = System.currentTimeMillis();
-			log.info("Completed OrderCreationRequest for : " + orderDownloadEvent + ": at :" + new java.util.Date()
+			log.info("Completed CustomerOrderDownloadEvent for : " + orderDownloadEvent + ": at :" + new java.util.Date()
 					+ " : total time:" + (endTime - startTime) / 1000.00 + " secs");
 		} catch (Exception e) {
 			e.printStackTrace();
 			long endTime = System.currentTimeMillis();
-			log.error("Error Completing OrderCreationRequest for : " + orderDownloadEvent + ": at :"
+			log.error("Error Completing CustomerOrderDownloadEvent for : " + orderDownloadEvent + ": at :"
 					+ new java.util.Date() + " : total time:" + (endTime - startTime) / 1000.00 + " secs", e);
 		}
 	}

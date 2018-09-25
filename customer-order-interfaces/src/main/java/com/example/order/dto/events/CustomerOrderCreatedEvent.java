@@ -17,23 +17,23 @@ import lombok.Value;
 @NoArgsConstructor
 @Data
 public class CustomerOrderCreatedEvent extends BaseEvent {
-	private CustomerOrderDTO orderDTO;
+	private CustomerOrderDTO customerOrderDTO;
 	private static String EVENT_NAME = "CustomerOrderCreatedEvent";
-	public CustomerOrderCreatedEvent(CustomerOrderDTO orderDTO) {
-		this(orderDTO, null);
+	public CustomerOrderCreatedEvent(CustomerOrderDTO customerOrderDTO) {
+		this(customerOrderDTO, null);
 	}
 
 	public CustomerOrderCreatedEvent(CustomerOrderDTO orderDTO, Map headerMap) {
 		super(EVENT_NAME);
-		this.orderDTO = orderDTO;
+		this.customerOrderDTO = orderDTO;
 		if(headerMap != null)
 			this.setHeaderMap(headerMap);
 		this.addHeader("eventName", getEventName());
-		this.addHeader("busName", orderDTO.getBusName());
-		this.addHeader("locnNbr", orderDTO.getLocnNbr());
-		this.addHeader("OrderNbr", orderDTO.getOrderNbr());
-		this.addHeader("company", orderDTO.getCompany());
-		this.addHeader("division", orderDTO.getDivision());
-		this.addHeader("busUnit", orderDTO.getBusUnit());
+		this.addHeader("busName", customerOrderDTO.getBusName());
+		this.addHeader("locnNbr", customerOrderDTO.getLocnNbr());
+		this.addHeader("OrderNbr", customerOrderDTO.getOrderNbr());
+		this.addHeader("company", customerOrderDTO.getCompany());
+		this.addHeader("division", customerOrderDTO.getDivision());
+		this.addHeader("busUnit", customerOrderDTO.getBusUnit());
 	}
 }

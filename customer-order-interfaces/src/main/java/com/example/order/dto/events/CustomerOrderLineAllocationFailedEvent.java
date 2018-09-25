@@ -14,18 +14,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class CustomerOrderLineAllocationFailedEvent extends ExceptionEvent{
-	public CustomerOrderLineStatusUpdateRequestDTO orderLineStatusUpdateRequestDTO;
+	public CustomerOrderLineStatusUpdateRequestDTO customerOrderLineStatusUpdateRequestDTO;
 	private static String EVENT_NAME = "CustomerOrderLineAllocationFailedEvent";
 	public CustomerOrderLineAllocationFailedEvent(CustomerOrderLineStatusUpdateRequestDTO req, String errorMsg) {
 		super(EVENT_NAME, errorMsg);
-		this.orderLineStatusUpdateRequestDTO = req;
+		this.customerOrderLineStatusUpdateRequestDTO = req;
 		this.addHeader("eventName", getEventName());
-		this.addHeader("busName", req.getBusName());
-		this.addHeader("locnNbr", req.getLocnNbr());
-		this.addHeader("OrderNbr", req.getOrderNbr());
-		this.addHeader("company", req.getCompany());
-		this.addHeader("division", req.getDivision());
-		this.addHeader("busUnit", req.getBusUnit());
+		this.addHeader("busName", customerOrderLineStatusUpdateRequestDTO.getBusName());
+		this.addHeader("locnNbr", customerOrderLineStatusUpdateRequestDTO.getLocnNbr());
+		this.addHeader("OrderNbr", customerOrderLineStatusUpdateRequestDTO.getOrderNbr());
+		this.addHeader("company", customerOrderLineStatusUpdateRequestDTO.getCompany());
+		this.addHeader("division", customerOrderLineStatusUpdateRequestDTO.getDivision());
+		this.addHeader("busUnit", customerOrderLineStatusUpdateRequestDTO.getBusUnit());
 	}
 
 }

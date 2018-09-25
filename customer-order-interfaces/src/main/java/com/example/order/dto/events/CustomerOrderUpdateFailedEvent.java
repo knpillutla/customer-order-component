@@ -15,18 +15,18 @@ import lombok.Value;
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 @Data
 public class CustomerOrderUpdateFailedEvent extends ExceptionEvent{
-	public CustomerOrderUpdateRequestDTO orderUpdateReq;
+	public CustomerOrderUpdateRequestDTO customerOrderUpdateRequestDTO;
 	private static String EVENT_NAME = "CustomerOrderUpdateFailedEvent";
 	public CustomerOrderUpdateFailedEvent(CustomerOrderUpdateRequestDTO req, String errorMsg) {
 		super(EVENT_NAME, errorMsg);
-		this.orderUpdateReq = req;
+		this.customerOrderUpdateRequestDTO = req;
 		this.addHeader("eventName", getEventName());
-		this.addHeader("busName", req.getBusName());
-		this.addHeader("locnNbr", req.getLocnNbr());
-		this.addHeader("OrderNbr", req.getOrderNbr());
-		this.addHeader("company", req.getCompany());
-		this.addHeader("division", req.getDivision());
-		this.addHeader("busUnit", req.getBusUnit());
+		this.addHeader("busName", customerOrderUpdateRequestDTO.getBusName());
+		this.addHeader("locnNbr", customerOrderUpdateRequestDTO.getLocnNbr());
+		this.addHeader("OrderNbr", customerOrderUpdateRequestDTO.getOrderNbr());
+		this.addHeader("company", customerOrderUpdateRequestDTO.getCompany());
+		this.addHeader("division", customerOrderUpdateRequestDTO.getDivision());
+		this.addHeader("busUnit", customerOrderUpdateRequestDTO.getBusUnit());
 	}
 
 }

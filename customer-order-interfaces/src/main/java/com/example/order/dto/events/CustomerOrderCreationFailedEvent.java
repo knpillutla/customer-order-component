@@ -13,19 +13,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class CustomerOrderCreationFailedEvent extends ExceptionEvent{
-	public CustomerOrderCreationRequestDTO orderCreationReq;
+	public CustomerOrderCreationRequestDTO customerOrderDTO;
 	private static String EVENT_NAME = "CustomerOrderCreationFailedEvent";
 	
 	public CustomerOrderCreationFailedEvent(CustomerOrderCreationRequestDTO req, String errorMsg) {
 		super(EVENT_NAME, errorMsg);
-		this.orderCreationReq = req;
+		this.customerOrderDTO = req;
 		this.addHeader("eventName", getEventName());
-		this.addHeader("busName", req.getBusName());
-		this.addHeader("locnNbr", req.getLocnNbr());
-		this.addHeader("OrderNbr", req.getOrderNbr());
-		this.addHeader("company", req.getCompany());
-		this.addHeader("division", req.getDivision());
-		this.addHeader("busUnit", req.getBusUnit());
+		this.addHeader("busName", customerOrderDTO.getBusName());
+		this.addHeader("locnNbr", customerOrderDTO.getLocnNbr());
+		this.addHeader("OrderNbr", customerOrderDTO.getOrderNbr());
+		this.addHeader("company", customerOrderDTO.getCompany());
+		this.addHeader("division", customerOrderDTO.getDivision());
+		this.addHeader("busUnit", customerOrderDTO.getBusUnit());
 	}
 
 }

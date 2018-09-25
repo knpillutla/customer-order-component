@@ -15,23 +15,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class CustomerOrderDownloadEvent extends BaseEvent {
-	private CustomerOrderCreationRequestDTO orderCreationRequestDTO;
+	private CustomerOrderCreationRequestDTO customerOrderCreationRequestDTO;
 	private static String EVENT_NAME = "CustomerOrderDownloadEvent";
 	public CustomerOrderDownloadEvent(CustomerOrderCreationRequestDTO orderReqDTO) {
 		this(orderReqDTO, null);
 	}
 
-	public CustomerOrderDownloadEvent(CustomerOrderCreationRequestDTO orderReqDTO, Map headerMap) {
+	public CustomerOrderDownloadEvent(CustomerOrderCreationRequestDTO orderCreationRequestDTO, Map headerMap) {
 		super(EVENT_NAME);
-		this.orderCreationRequestDTO = orderReqDTO;
+		this.customerOrderCreationRequestDTO = orderCreationRequestDTO;
 		if(headerMap != null)
 			this.setHeaderMap(headerMap);
 		this.addHeader("eventName", getEventName());
-		this.addHeader("busName", orderCreationRequestDTO.getBusName());
-		this.addHeader("locnNbr", orderCreationRequestDTO.getLocnNbr());
-		this.addHeader("OrderNbr", orderCreationRequestDTO.getOrderNbr());
-		this.addHeader("company", orderCreationRequestDTO.getCompany());
-		this.addHeader("division", orderCreationRequestDTO.getDivision());
-		this.addHeader("busUnit", orderCreationRequestDTO.getBusUnit());
+		this.addHeader("busName", customerOrderCreationRequestDTO.getBusName());
+		this.addHeader("locnNbr", customerOrderCreationRequestDTO.getLocnNbr());
+		this.addHeader("OrderNbr", customerOrderCreationRequestDTO.getOrderNbr());
+		this.addHeader("company", customerOrderCreationRequestDTO.getCompany());
+		this.addHeader("division", customerOrderCreationRequestDTO.getDivision());
+		this.addHeader("busUnit", customerOrderCreationRequestDTO.getBusUnit());
 	}
 }
