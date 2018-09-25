@@ -1,4 +1,4 @@
-CREATE TABLE ORDERS
+CREATE TABLE CUSTOMER_ORDERS
 (
     ID serial primary key,
     BUS_NAME character varying(50),
@@ -58,7 +58,7 @@ CREATE TABLE ORDERS
     unique (BUS_NAME, LOCN_NBR,COMPANY,DIVISION,BUS_UNIT,ORDER_NBR)
 );
 
-CREATE TABLE ORDER_LINES
+CREATE TABLE CUSTOMER_ORDER_LINES
 (
     ID serial primary key,
 	LOCN_NBR integer not null,

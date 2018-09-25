@@ -1,0 +1,15 @@
+com\example\order\dto\requests\CustomerOrderUpdateRequestDTO.class
+com\example\order\dto\responses\CustomerOrderLineDTO.class
+com\example\order\dto\events\CustomerOrderUpdateFailedEvent.class
+com\example\order\dto\events\CustomerOrderAllocatedEvent.class
+com\example\order\dto\events\CustomerOrderCreationFailedEvent.class
+com\example\order\dto\responses\CustomerOrderDTO.class
+com\example\order\dto\events\ExceptionEvent.class
+com\example\inventory\dto\BaseDTO.class
+com\example\order\dto\events\BaseEvent.class
+com\example\order\dto\events\CustomerOrderCreatedEvent.class
+com\example\order\dto\events\CustomerOrderLineAllocationFailedEvent.class
+com\example\order\dto\requests\CustomerOrderLineStatusUpdateRequestDTO.class
+com\example\order\dto\requests\CustomerOrderLineCreationRequestDTO.class
+com\example\order\dto\requests\CustomerOrderCreationRequestDTO.class
+com\example\order\dto\events\CustomerOrderDownloadEvent.class

@@ -10,18 +10,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.MimeTypeUtils;
 
 import com.example.order.dto.events.BaseEvent;
-import com.example.order.streams.OrderStreams;
+import com.example.order.streams.CustomerOrderStreams;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Service
-@EnableBinding(OrderStreams.class)
+@EnableBinding(CustomerOrderStreams.class)
 @Slf4j
 public class EventPublisher {
 	@Autowired
-	private final OrderStreams orderStreams;
+	private final CustomerOrderStreams orderStreams;
 
-	public EventPublisher(OrderStreams orderStreams) {
+	public EventPublisher(CustomerOrderStreams orderStreams) {
 	        this.orderStreams = orderStreams;
 	    }
 
