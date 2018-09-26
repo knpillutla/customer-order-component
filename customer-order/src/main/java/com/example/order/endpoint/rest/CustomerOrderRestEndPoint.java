@@ -26,8 +26,8 @@ import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping("/orders/v1")
-@Api(value="Order Service", description="Operations pertaining to Orders")
+@RequestMapping("/customer-orders/v1")
+@Api(value="Customer Order Service", description="Operations pertaining to Customer Orders")
 @RefreshScope
 @Slf4j
 public class CustomerOrderRestEndPoint {
