@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:com.example.order.CustomerOrderApplication</config>
+		<config>java:com.example.shipping.CustomerOrderApplication</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
