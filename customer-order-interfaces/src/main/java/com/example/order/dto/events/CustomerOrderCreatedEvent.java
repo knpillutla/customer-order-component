@@ -23,17 +23,17 @@ public class CustomerOrderCreatedEvent extends BaseEvent {
 		this(customerOrderDTO, null);
 	}
 
-	public CustomerOrderCreatedEvent(CustomerOrderDTO orderDTO, Map headerMap) {
+	public CustomerOrderCreatedEvent(CustomerOrderDTO customerOrderDTO, Map headerMap) {
 		super(EVENT_NAME);
-		this.customerOrderDTO = orderDTO;
+		this.customerOrderDTO = customerOrderDTO;
 		if(headerMap != null)
 			this.setHeaderMap(headerMap);
 		this.addHeader("eventName", getEventName());
-		this.addHeader("busName", customerOrderDTO.getBusName());
-		this.addHeader("locnNbr", customerOrderDTO.getLocnNbr());
-		this.addHeader("OrderNbr", customerOrderDTO.getOrderNbr());
-		this.addHeader("company", customerOrderDTO.getCompany());
-		this.addHeader("division", customerOrderDTO.getDivision());
-		this.addHeader("busUnit", customerOrderDTO.getBusUnit());
+		this.addHeader("busName", this.customerOrderDTO.getBusName());
+		this.addHeader("locnNbr", this.customerOrderDTO.getLocnNbr());
+		this.addHeader("OrderNbr", this.customerOrderDTO.getOrderNbr());
+		this.addHeader("company", this.customerOrderDTO.getCompany());
+		this.addHeader("division", this.customerOrderDTO.getDivision());
+		this.addHeader("busUnit", this.customerOrderDTO.getBusUnit());
 	}
 }
